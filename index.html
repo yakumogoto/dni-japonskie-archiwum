@@ -6,143 +6,222 @@
   <title>Archiwum zdjęć – Dni Japońskie</title>
 
   <style>
-    body {
+    :root{
+      --accent:#c40000;
+      --bg:#f6f7f9;
+      --card:#ffffff;
+      --text:#1f2328;
+      --muted:#57606a;
+      --link:#0969da;
+      --border:#d0d7de;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.55;
     }
 
-    header {
-      background: #ffffff;
-      border-bottom: 4px solid #c40000;
-      padding: 2rem 1rem;
+    /* “Węższy ekran i na środku” */
+    .wrap{
+      max-width: 820px;         /* wężej niż typowy dokument */
+      margin: 0 auto;
+      padding: 28px 16px 36px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header{
+      padding: 28px 22px 18px;
+      border-bottom: 4px solid var(--accent);
       text-align: center;
+      background: #fff;
     }
 
-    header h1 {
+    header h1{
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.9rem;
+      letter-spacing: .2px;
     }
 
-    header p {
-      margin-top: 0.5rem;
-      color: #555;
+    header p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
     }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    main{
+      padding: 22px;
     }
 
-    section {
-      margin-bottom: 2.5rem;
+    .event{
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      margin: 0 0 14px;
     }
 
-    h2 {
-      border-left: 6px solid #c40000;
-      padding-left: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
+    .event h2{
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 10px;
     }
 
-    ul {
+    /* Podpunkty w prawo względem nazwy wydarzenia */
+    .event ul{
       list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .event ul.sub{
+      margin-left: 24px;     /* to jest to “trochę w prawo” */
       padding-left: 0;
     }
 
-    li {
-      margin: 0.3rem 0;
+    .event li{
+      margin: 6px 0;
     }
 
-    a {
-      color: #0645ad;
+    a{
+      color: var(--link);
       text-decoration: none;
     }
-
-    a:hover {
+    a:hover{
       text-decoration: underline;
     }
 
-    .year {
-      font-weight: bold;
-      margin-top: 1rem;
+    .note{
+      color: var(--muted);
+      margin: 10px 0 0;
+      font-size: .95rem;
     }
 
-    footer {
-      background: #f0f0f0;
-      padding: 1.5rem;
+    footer{
+      padding: 16px 22px 22px;
+      color: var(--muted);
       text-align: center;
-      font-size: 0.9rem;
-      color: #555;
+      font-size: .9rem;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    /* Drobne ułatwienie na telefonie */
+    @media (max-width: 420px){
+      header h1{ font-size: 1.55rem; }
+      .event ul.sub{ margin-left: 18px; }
+      main{ padding: 18px; }
     }
   </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <div class="card">
 
-<header>
-  <h1>📸 Archiwum zdjęć – Dni Japońskie</h1>
-  <p>Klub Yakumo-goto · Galerie z lat 2007–2023</p>
-</header>
+      <header>
+        <h1>📸 Archiwum zdjęć – Dni Japońskie</h1>
+        <p>Klub Yakumo-goto · Galerie z lat 2007–2025</p>
+      </header>
 
-<main>
+      <main>
 
-<section>
-  <h2>XVI Dni Japońskie – 2023</h2>
-  <ul>
-    <li>🎓 <a href="https://tiny.pl/wz2q5" target="_blank">Wykłady</a></li>
-    <li>🖼️ <a href="https://tiny.pl/wz2qn" target="_blank">Wystawy</a></li>
-    <li>🏮 <a href="https://tiny.pl/wz2qs" target="_blank">Stoiska</a></li>
-  </ul>
-</section>
+        <!-- 2025 -->
+        <section class="event">
+          <h2>XVIII Dni Japońskie – 2025</h2>
+          <ul class="sub">
+            <li>📅 <a href="https://photos.google.com/u/4/share/AF1QipOdIh1kH1apquAmPwN2xm04-qXIQeXxXT4dFPvUAcoVQP3L8ZS90r1FhRc1X-r2lQ" target="_blank" rel="noopener">Dzień 1</a></li>
+            <li>📅 <a href="https://photos.google.com/u/4/share/AF1QipOydXt2poVRduivXeaH_e3h56Jv9tkdjxddez_HCe3fL-3fuFM0hTDjAGumf59laQ" target="_blank" rel="noopener">Dzień 2</a></li>
+            <li>🖼️ <a href="https://photos.google.com/u/4/share/AF1QipMhuKoTzNORAwRYcJ_WeVr6nE1qufaBDo4rCH6Kj3EdqKxhN872XsiKIxFsMQsyfg" target="_blank" rel="noopener">Wystawy</a></li>
+            <li>🏮 <a href="https://photos.google.com/u/4/share/AF1QipOX73drYKOY9RjWRZ9M0T8DQ6YtZX6U-21rzEDTrQ0MWjKri53IxUYA8xhUu4kPEA" target="_blank" rel="noopener">Stoiska</a></li>
+          </ul>
+        </section>
 
-<section>
-  <h2>XV Dni Japońskie – 2022</h2>
-  <ul>
-    <li>📅 <a href="https://tiny.pl/wjr55" target="_blank">Dzień 1</a></li>
-    <li>📅 <a href="https://tiny.pl/wjr5s" target="_blank">Dzień 2</a></li>
-    <li>🖼️ <a href="https://tiny.pl/wjr5z" target="_blank">Wystawy</a></li>
-    <li>🏮 <a href="https://tiny.pl/wjr1h" target="_blank">Stoiska</a></li>
-    <li>📎 <a href="https://tiny.pl/wjr17" target="_blank">Inne</a></li>
-  </ul>
-</section>
+        <!-- 2024 -->
+        <section class="event">
+          <h2>XVII Dni Japońskie – 2024</h2>
+          <ul class="sub">
+            <li>📅 <a href="https://photos.google.com/u/4/share/AF1QipOct-I5z6SONZSPM-XWhfAQw72PAKyZN_mVE6760Sep-5WBTOo02vHhwkARUTS_cQ" target="_blank" rel="noopener">Dzień 1</a></li>
+            <li>📅 <a href="https://photos.google.com/u/4/share/AF1QipOladtpHnieNiLEs70fB2eeFV5gdP-uk-zJ4A7hY8e9wELncvuEGM6BDNqoB9CVQA" target="_blank" rel="noopener">Dzień 2</a></li>
+            <li>🧑‍🏫 <a href="https://photos.google.com/u/4/share/AF1QipM6CU1Fs5PdrqcJiaAWKuSeAvaD4gu3tWy0gE51j_iTXxaf6YqSk2P4lW7Vbaiuvw" target="_blank" rel="noopener">Dzień 2 (warsztaty)</a></li>
+            <li>🖼️ <a href="https://photos.google.com/u/4/share/AF1QipN6bkb9sMXL_WqlfwgleKMjOxaER5M2v38wXF7arW0q2DnFvYquR_eR878od9FyEQ" target="_blank" rel="noopener">Wystawy</a></li>
+            <li>🏮 <a href="https://photos.google.com/u/4/share/AF1QipPwAR7vsAzxd_m4I0Sm6n-KjZFPbi5t0073vmP1SN7qnssdo9CXCnqqk_xOrEP29g" target="_blank" rel="noopener">Stoiska</a></li>
+          </ul>
+        </section>
 
-<section>
-  <h2>XIV Dni Japońskie – 2021</h2>
-  <p>💻 Wydarzenie zdalne (online)</p>
-</section>
+        <!-- 2023 -->
+        <section class="event">
+          <h2>XVI Dni Japońskie – 2023</h2>
+          <ul class="sub">
+            <li>🎓 <a href="https://tiny.pl/wz2q5" target="_blank" rel="noopener">Wykłady</a></li>
+            <li>🖼️ <a href="https://tiny.pl/wz2qn" target="_blank" rel="noopener">Wystawy</a></li>
+            <li>🏮 <a href="https://tiny.pl/wz2qs" target="_blank" rel="noopener">Stoiska</a></li>
+          </ul>
+        </section>
 
-<section>
-  <h2>Archiwum – lata wcześniejsze</h2>
-  <ul>
-    <li class="year">2019 – <a href="https://tiny.pl/9pkgh" target="_blank">XIII Dni Japońskie</a></li>
-    <li class="year">2018 – <a href="https://tiny.pl/9j393" target="_blank">XII Dni Japońskie</a></li>
-    <li class="year">2017 – <a href="https://tiny.pl/9j3wr" target="_blank">XI Dni Japońskie</a></li>
-    <li class="year">2016 – <a href="https://tiny.pl/9pdb9" target="_blank">X Dni Japońskie</a></li>
-    <li class="year">2015 – <a href="https://tiny.pl/9pkgg" target="_blank">IX Dni Japońskie</a></li>
-    <li class="year">2014 – <a href="https://tiny.pl/9pkg7" target="_blank">VIII Dni Japońskie</a></li>
-    <li class="year">2013 – <a href="https://tiny.pl/9pkgf" target="_blank">VII Dni Japońskie</a></li>
-    <li class="year">2012 – <a href="https://tiny.pl/9pkgj" target="_blank">VI Dni Japońskie</a></li>
-    <li class="year">2011 – <a href="https://tiny.pl/9pkgl" target="_blank">V Dni Japońskie</a></li>
-    <li class="year">2010 – 
-      <a href="https://tiny.pl/9pkg8" target="_blank">Piotrków</a> · 
-      <a href="https://bit.ly/3uDRVXR" target="_blank">Łódź</a>
-    </li>
-    <li class="year">2009 – <a href="https://bit.ly/33fBeXq" target="_blank">III Dni Japońskie</a></li>
-    <li class="year">2008 – <a href="https://bit.ly/34xHevd" target="_blank">II Dni Japońskie</a></li>
-    <li class="year">2007 – <a href="https://tiny.pl/9pkth" target="_blank">I Dni Japońskie</a></li>
-  </ul>
-</section>
+        <!-- 2022 -->
+        <section class="event">
+          <h2>XV Dni Japońskie – 2022</h2>
+          <ul class="sub">
+            <li>📅 <a href="https://tiny.pl/wjr55" target="_blank" rel="noopener">Dzień 1</a></li>
+            <li>📅 <a href="https://tiny.pl/wjr5s" target="_blank" rel="noopener">Dzień 2</a></li>
+            <li>🖼️ <a href="https://tiny.pl/wjr5z" target="_blank" rel="noopener">Wystawy</a></li>
+            <li>🏮 <a href="https://tiny.pl/wjr1h" target="_blank" rel="noopener">Stoiska</a></li>
+            <li>📎 <a href="https://tiny.pl/wjr17" target="_blank" rel="noopener">Inne</a></li>
+          </ul>
+        </section>
 
-</main>
+        <!-- 2021 -->
+        <section class="event">
+          <h2>XIV Dni Japońskie – 2021</h2>
+          <p class="note">💻 Wydarzenie zdalne (online)</p>
+        </section>
 
-<footer>
-  Klub Yakumo-goto · Archiwum zdjęć Dni Japońskich<br/>
-  Strona statyczna – bez logowania, bez ciasteczek
-</footer>
+        <!-- Archiwum starsze -->
+        <section class="event">
+          <h2>Archiwum – lata wcześniejsze</h2>
+          <ul class="sub">
+            <li>📸 <a href="https://tiny.pl/9pkgh" target="_blank" rel="noopener">XIII Dni Japońskie – 2019</a></li>
+            <li>📸 <a href="https://tiny.pl/9j393" target="_blank" rel="noopener">XII Dni Japońskie – 2018</a></li>
+            <li>📸 <a href="https://tiny.pl/9j3wr" target="_blank" rel="noopener">XI Dni Japońskie – 2017</a></li>
+            <li>📸 <a href="https://tiny.pl/9pdb9" target="_blank" rel="noopener">X Dni Japońskie – 2016</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkgg" target="_blank" rel="noopener">IX Dni Japońskie – 2015</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkg7" target="_blank" rel="noopener">VIII Dni Japońskie – 2014</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkgf" target="_blank" rel="noopener">VII Dni Japońskie – 2013</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkgj" target="_blank" rel="noopener">VI Dni Japońskie – 2012</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkgl" target="_blank" rel="noopener">V Dni Japońskie – 2011</a></li>
+            <li>📍 IV Dni Japońskie – 2010:
+              <a href="https://tiny.pl/9pkg8" target="_blank" rel="noopener">Piotrków</a> ·
+              <a href="https://bit.ly/3uDRVXR" target="_blank" rel="noopener">Łódź</a>
+            </li>
+            <li>📸 <a href="https://bit.ly/33fBeXq" target="_blank" rel="noopener">III Dni Japońskie – 2009</a></li>
+            <li>📸 <a href="https://bit.ly/34xHevd" target="_blank" rel="noopener">II Dni Japońskie – 2008</a></li>
+            <li>📸 <a href="https://tiny.pl/9pkth" target="_blank" rel="noopener">I Dni Japońskie – 2007</a></li>
+          </ul>
+        </section>
 
+      </main>
+
+      <footer>
+        Klub Yakumo-goto · Archiwum zdjęć Dni Japońskich<br/>
+        Strona statyczna (GitHub Pages) – bez logowania
+      </footer>
+
+    </div>
+  </div>
 </body>
 </html>
